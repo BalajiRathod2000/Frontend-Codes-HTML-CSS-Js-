@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title> 16_page_design_2</title>
+
+        <style>
+             
+              *{
+
+                margin: 0px;
+                padding: 0px;
+              }
+             
+              header{
+                      background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://assets-news.housing.com/news/wp-content/uploads/2020/03/09183406/Top-10-IT-companies-in-Bengaluru-FB-1200x700-compressed.jpg");
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-size: cover;
+                      height: 100vh;
+              }
+
+              ul{
+
+                 float: right;
+                 list-style-type: none;
+                 margin-top: 25px;
+              }
+              ul li{
+
+                display: inline-block;
+              }
+
+              ul li a{
+
+            
+                border: 2px solid transparent;
+                color: white;
+                padding: 5px;
+                text-decoration: none;
+                transition: 0.5s ease;
+                
+              }
+
+              ul li a:hover
+              {
+
+                background-color: white;
+                color: black;
+              }
+
+
+                .active{
+
+                    background-color: white;
+                    color: black;
+                }
+
+                .title{
+
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                     }  
+                
+                
+
+                .title h1{
+
+                    color: white;
+                    font-size: 70px;
+                    }
+                 
+                    .balaji{
+
+                        max-width: 1200px;
+                        margin: auto;
+                    }
+
+                    .button{
+
+                        position: absolute;
+                         top:60%;
+                         left:50%;
+                         transform: translate(-50%,-50%);
+                    }
+
+                    .b{
+
+                        border: 2px solid transparent;
+                        color: white;
+                        padding: 5px;
+                        text-decoration: none;
+                        transition: 0.5s ease;
+                    }
+
+                    .b:hover{
+
+                        background-color: white;
+                         color: black;
+                    }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="balaji">
+                <ul>
+                     <li> <a href="#" class="active"> Home </a></li>
+                     <li> <a href="#"> Products </a></li>
+                     <li> <a href="#"> Company </a></li>
+                     <li> <a href="#"> Parterns </a></li>
+                     <li> <a href="#"> About </a></li>
+                     <li> <a href="#"> Contact Us </a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <h1> Balaji Rathod </h1>
+            </div>
+            <div class="button">
+                <a href="#" class="b"> more-Info</a>
+                <a href="#" class="b"> Learn-More</a>
+            </div>
+        </header>
+    </body>
+</html>
