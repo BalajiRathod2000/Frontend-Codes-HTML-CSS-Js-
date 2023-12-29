@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculate</title>
+</head>
+<body>
+
+  
+    <h2><b>Age Calculate </b></h2>
+    <label> Enter DoB :</label>
+    <input type="date" id="birthdate">
+    <p id="result"></p>
+
+    <button onclick="ageCalculate()">Calculate</button>
+    
+    <script>
+
+        function ageCalculate()
+        {
+        const birthdateInput = document.getElementById("birthdate").value;
+        const birthdate = new Date(birthdateInput);
+        const currentDate = new Date();
+      
+        const ageInMilliseconds = currentDate - birthdate;
+        const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+        const roundedAge = Math.floor(ageInYears);
+
+        document.getElementById("result").innerText = `Your age is ${roundedAge} years.`;
+        
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 
+<script>
+    function calculateAge() {
+      const birthdateInput = document.getElementById("birthdate").value;
+      const birthdate = new Date(birthdateInput);
+      const currentDate = new Date();
+      
+      const ageInMilliseconds = currentDate - birthdate;
+      const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+      const roundedAge = Math.floor(ageInYears);
+
+      document.getElementById("result").innerText = `Your age is ${roundedAge} years.`;
+    }
+  </script> -->

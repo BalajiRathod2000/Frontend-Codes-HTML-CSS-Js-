@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <label>name</label>
+       <input type="name" id="fname" placeholder="enter your name" />
+       <br/>
+       <label>last name</label>
+       <input type="text" id="lname">
+       <br/>
+       <label>mobile</label>
+       <input type="number" id="mobile">
+       <br/>
+       <label>Gender</label>
+        M<input type="radio" name="gender" value="male" class="gen">
+        F<input type="radio" name="gender" value="female" class="gen">
+        O<input type="radio" name="gender" value="other" class="gen">
+        <br/>
+        <button onclick="clickHanlder()">submit</button>
+        <script>
+             let name=document.getElementById('fname')
+             let lname=document.getElementById('lname')
+             let mobile=document.getElementById('mobile')
+             let gender=document.querySelectorAll('.gen')
+             
+             function clickHanlder()
+             {
+              
+                let firstName=name.value;
+                let lastName=lname.value;
+                let phone=mobile.value;
+                 
+                if(firstName.length==0 || lastName.length==0 || mobile.length ==0)
+                {
+                    alert('you must have to fill your feild')
+                    return 
+                }
+                else if ( phone.length!=10)
+                {
+                     alert('no must be 10')
+                     return
+                }
+                else if (!(gender[0].checked || gender[1].checked || gender[2].checked)) {
+                        alert("Please Select Your Gender");
+                       return ;
+                        }
+                 
+                else{
+                    alert(`your firstName is ${firstName} , your lastName is ${lastName} and your mobile no is ${phone}
+                       cong. you are register`)
+                }
+             }
+             
+        </script>
+        
+</body>
+</html>

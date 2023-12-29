@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side Navbar Example</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: -250px; /* Initially hide the sidebar off-screen */
+      background-color: #111;
+      padding-top: 20px;
+      transition: 0.5s; /* Add smooth transition effect */
+    }
+
+    .sidenav a {
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: flex;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #818181;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #f1f1f1;
+    }
+
+    .content {
+      margin-left: 0;
+      padding: 16px;
+      transition: margin-left 0.5s; /* Add smooth transition effect */
+    }
+
+    .menu-btn {
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidenav" id="mySidenav">
+  <span class="close-btn" onclick="closeNav()">&times;</span>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="content">
+  <span class="menu-btn" onclick="openNav()">&#9776; Open Sidebar</span>
+  <h2>Main Content Area</h2>
+  <p>This is the main content area. You can add your page content here.</p>
+</div>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.left = "0";
+    document.getElementsByClassName("content")[0].style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.left = "-250px";
+    document.getElementsByClassName("content")[0].style.marginLeft = "0";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+         <title>  open doors</title>
+
+         <style>
+
+            #parent{
+
+                height: 300px;
+                width: 250px;
+                margin: 30px auto;
+                box-shadow: 0 0 20px black;
+                perspective: 1000px;
+                position: relative;
+            }
+
+            #parent>img{
+
+                width: 100%;
+                height: 100%;
+            }
+
+            #parent>#left-door{
+
+                width: 125px;
+                height: inherit;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: cadetblue;
+                border: 2px solid black;
+                transform-origin: left;
+                transition: all 2s linear 0s;
+            }
+
+            #parent>#right-door{
+
+                width: 125px;
+                height: inherit;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: cadetblue;
+                border: 2px solid black;
+                transform-origin: right;
+                transition: all 2s linear 0s;
+                
+            }
+
+            #parent:hover>#left-door{
+
+                cursor: pointer;
+                transform: rotateY(-140deg);
+
+            }
+
+            #parent:hover>#right-door{
+
+                cursor: pointer;
+                transform: rotateY(140deg);
+            }
+         </style>
+    </head>
+    <body> 
+        <div id="parent">
+  
+            <img src="https://i.pinimg.com/736x/ca/18/d2/ca18d2475812b56fb79394d06a4f00c4.jpg">
+
+             <div id="left-door"></div>
+            
+             <div id="right-door"></div>
+        </div>
+    
+    </body>
+</html>

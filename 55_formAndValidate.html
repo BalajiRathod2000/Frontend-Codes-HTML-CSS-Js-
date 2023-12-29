@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <style>
+
+        body{
+
+            background-color: cadetblue;
+        }
+
+        fieldset
+        {
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            background-color: rgb(213, 213, 11);
+            width: 210px;
+            margin: 121px 70px 23px 510px;
+            border-radius: 10px ;
+            border: 10px unset rgb(128, 0, 119);
+            
+        }
+
+        fieldset:hover
+        {
+            
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            background-color: rgb(245, 71, 199);
+            width: 210px;
+            margin: 121px 70px 23px 510px;
+            border-radius: 10px ;
+         
+            transition: all 0.1999s linear;
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+
+
+        }
+
+        legend
+        {
+
+          margin: auto;
+          border: 2px solid rgb(149, 61, 231);
+          font-size: large;
+          border-radius: 10px 0;
+          background-color: rgb(245, 103, 51);
+          height: 25px;
+        }
+
+        legend:hover
+        {
+
+          margin: auto;
+          border: 2px solid rgb(174, 237, 47);
+          font-size: large;
+          border-radius: 10px 0;
+          background-color: rgb(179, 19, 207);
+          height: 25px;
+          color: white;
+          transition: all 0.1999s linear;
+          box-shadow: 0px 0px 10px black;
+          cursor: pointer;
+        }
+
+        .table
+        {
+
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            color: black;
+           
+
+        }
+
+    </style>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            console.log('hii i am validation function')
+            // // Get form elements
+            // var name = document.forms["myForm"]["name"].value;
+            // var email = document.forms["myForm"]["email"].value;
+            // var age = document.forms["myForm"]["age"].value;
+
+            // // Check if fields are empty
+            // if (name === "" || email === "" || age === "") {
+            //     alert("All fields are required.");
+            //     return false;
+            // }
+
+            // // Check if email is valid
+            // var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // if (!email.match(emailRegex)) {
+            //     alert("Invalid email format.");
+            //     return false;
+            // }
+
+            // // Check if age is a positive number
+            // if (isNaN(age) || parseInt(age) < 0) {
+            //     alert("Age must be a positive number.");
+            //     return false;
+            // }
+
+            // // Form is valid, continue with form submission (in a real scenario)
+            // alert("Form submitted successfully!");
+            // return true;
+        }
+    </script>
+</head>
+<body>
+    
+    
+   <fieldset>
+
+        <legend> Form Validation </legend>
+
+        <table class="table">
+            
+    
+            <form name="myForm" onsubmit="return validateForm(event)" method="post">
+            
+                <tr>
+                    <td> <label for="name">Name:</label>  </td>
+        
+                </tr>
+        
+                <tr>
+                    <td>  <input type="text" id="name" name="name" > </td>
+                </tr>
+        
+                <tr>
+                    <td> <label for="email">Email:</label> </td>
+                </tr>
+        
+                <tr>
+                    <td>   <input type="email" id="email" name="email" > </td>
+                </tr>
+        
+                <tr>
+                    <td> <label for="age">Age:</label> </td>
+                </tr>
+                <tr>
+                    <td>  <input type="number" id="age" name="age" > </td>
+                </tr>
+        
+               <tr>
+                <td>  <input type="submit" value="Submit"> </td>
+               </tr>
+            </form>
+    
+        </table>
+    
+
+   </fieldset>
+</body>
+</html>

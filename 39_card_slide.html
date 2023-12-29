@@ -1,0 +1,87 @@
+<html>
+    <head> 
+        <title> card_slide </title>
+
+        <style>
+
+            *{
+
+                margin: 0;
+                padding: 0;
+            }
+            div{
+
+                width: 100px;
+                height: 100px;
+                box-shadow: 5px 5px 10px black;
+                display: flex;
+              
+                position: relative;
+
+                animation:  animate 5s linear 0s infinite alternate;
+            }
+
+            @keyframes animate{
+
+                0%{
+
+                    top: 0px;
+                    left: 0px;
+                    background-color: aquamarine;
+                    border-radius: 100px;
+                }
+
+                20%{
+
+                    top:150px;
+                    left:200px;
+                    background-color: blueviolet;
+                    border-radius: 60px;
+
+                }
+
+                40%{
+
+                    top: 250px;
+                    left: 300px;
+                    background-color: cadetblue;
+                    transform: skewY(40deg);
+                }
+
+                60%{
+
+                    top: 300px;
+                    left: 350px;
+                    background-color: chartreuse;
+                    transform: translateY(60deg);
+                }
+
+                80%{
+
+                    top: 350px;
+                    left: 400px;
+                    background-color: cornflowerblue;
+                    transform: rotateX(75deg);
+
+                }
+
+                100%{
+
+                    top: 0px;
+                    left: 500px;
+                    background-color: crimson;
+                    
+                }
+            }
+
+            div:hover{
+
+                transition: 0.5s;
+                background-color: sienna;
+            }
+        </style>
+    </head>
+    <body>
+            <div> </div>
+    </body>
+</html>

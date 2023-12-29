@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Reader</title>
+</head>
+<body>
+    <video id="video" width="300" height="300" autoplay></video>
+    <canvas id="canvas" width="300" height="300" style="display:none;"></canvas>
+    <script type="text/javascript" src="https://cdn.rawgit.com/zxing/zxing/master/zxing.js"></script>
+    <script type="text/javascript">
+        navigator.mediaDevices.getUserMedia({video: true})
+            .then(function(stream) {
+                var video = document.getElementById("video");
+                video.srcObject = stream;
+                video.setAttribute("playsinline", true);
+                video.play();
+                requestAnimationFrame(tick);
+            });
+        function tick() {
+            var video = document.getElementById("video");
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                canvas.height = video.videoHeight;
+                canvas.width = video.videoWidth;
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                try {
+                    var result = ZXing.decode(imageData);
+                    if (result) {
+                        console.log(result.text);
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+            requestAnimationFrame(tick);
+        }
+    </script>
+</body>
+</html>

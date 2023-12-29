@@ -1,0 +1,76 @@
+<html> 
+    <head>
+        <title> slide_details</title>
+
+        <style>
+
+            #parent{
+
+                width: 400px;
+                height: 400px;
+                border-radius: 20px;
+                margin: 20px auto;
+                box-shadow: 0 0 20px black;
+                position: relative;
+                overflow: hidden;
+            }
+            #parent>img{
+
+                width: 400px;
+                height: 400px;
+                border-radius: 20px;
+                margin: auto;
+                transition: all 2s linear 0s;
+            }
+
+             #parent>#details{
+
+                position: absolute;
+                top: 408px;
+                left: 0;
+                background-color: rgb(74, 108, 96);
+                color: white;
+                width: 400px;
+                border-radius: 20px;
+                transition: all 2s linear 0s;
+            }
+             
+            #parent>#details>ul>li{
+
+                border-bottom: 2px solid white;
+                list-style-type: none;
+                text-align: center;
+                width: 200px;
+                margin-left: 55px;
+                
+            }
+            
+
+            #parent:hover>img{
+
+                cursor: pointer;
+                transform: translatey(-100px);
+            }
+
+            #parent:hover>#details{
+
+                cursor: pointer;
+                transform: translatey(-100px);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="parent">
+            <img src="https://i.pinimg.com/550x/49/5f/76/495f7612adca3ddd4a98b395ac97089d.jpg">
+
+            <div id="details">
+                <ul>
+                    <li> Men T-shirt</li>
+                    <li> Nike Brand </li>
+                    <li> 4,500</li>
+                </ul>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title> slidecard</title>
+        <style>
+            
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+
+                background-color: rgb(4, 243, 167);
+
+            }
+
+            .card{
+
+                width: 200px;
+                height: 200px;
+                padding: 250px 500px;
+                
+               
+                
+               
+                
+            }
+            .flip{
+
+                width: 200px;
+                height: 200px;
+                color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                background-color: rgba(255, 255, 255, 0.79);
+            }
+
+            .flip{
+
+                box-shadow: 0px 0px 40px black;
+                border-radius: 20px;
+                transition: all 0.5s linear 0.5s;
+                border: 2px solid black;
+                
+                
+            }
+
+            .flip:hover{
+
+                transform: skew(45deg);
+                background-color: deeppink;
+    
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="card">
+            <div class="flip"> 
+                <div class="rotate">Hello</div>
+
+            </div>
+
+        </div>
+    </body>
+</html>

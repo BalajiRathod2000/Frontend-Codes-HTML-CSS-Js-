@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title> 3Dview</title>
+
+        <style>
+
+            *{
+
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Oswald', sans-serif;
+            }
+            body{
+
+                display: flex;
+                justify-content: center;
+                min-height: 100vh;
+                background: rgb(202, 194, 194);
+            }
+
+            ul{
+
+                position: relative;
+                transform: skew(15deg);
+                margin-top: 200px;
+               
+            }
+
+            ul li{
+
+                position: relative;
+                list-style: none;
+                width: 200px;
+                background: #3e3f46;
+                padding: 15px;
+                z-index: var(--i);
+                transition: 0.05s;
+            }
+
+            ul li:hover{
+
+                background-color: lightskyblue;
+                transform: translateX(-50px);
+            }
+            ul li::before{
+
+                content: "";
+                position: absolute;
+                height: 50px;
+                width: 40px;
+                background: #3e3f46;
+                top: 0; 
+                left: -40px;
+                transform-origin: right;
+                transform: skewY(45deg);
+                transition: 0.05s;
+
+            }
+
+            ul li:hover::before{
+
+                background: lightskyblue;
+            }
+
+            ul li::after{
+
+
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 40px;
+                top: -40px;
+                left:0;
+                background: #3e3f46;
+                transform-origin: bottom;
+                transform: skewX(45deg);
+                transition: 0.5s;
+            }
+
+            ul li:hover::after{
+
+                background: lightskyblue;
+            }
+
+            ul li a{
+
+                text-decoration: none;
+                color: white;
+                display: block;text-transform: uppercase;
+                letter-spacing: 0.05em;
+                transition: 0.5s;
+            }
+
+            ul li:hover a
+            {
+
+                color: white;
+            }
+
+            ul li:last-child::after{
+
+                box-shadow: -120px 120px 20px rgba(0,0,0,0.35);
+            }
+        </style>
+    </head>
+    <body>
+
+        <ul>
+            <li style="--i:6"> <a href="#"> Home</a></li>
+            <li style="--i:5"> <a href="#"> About</a></li>
+            <li style="--i:4"> <a href="#"> Service</a></li>
+            <li style="--i:3"> <a href="#">Profile</a></li>
+            <li style="--i:2"> <a href="#"> Portfolio</a></li>
+            <li style="--i:1"> <a href="#"> Contact</a></li>
+        </ul>
+    </body>
+</html>

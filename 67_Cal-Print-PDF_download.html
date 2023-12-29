@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+  
+  body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+  
+  </style>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <form id="calculatorForm">
+    <label for="num1">Number 1:</label>
+    <input type="text" id="num1" name="num1" required>
+    <br>
+    <label for="num2">Number 2:</label>
+    <input type="text" id="num2" name="num2" required>
+    <br>
+    <button type="button" onclick="calculate()">Calculate</button>
+    <button type="button" onclick="print()">Print</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+  
+  function calculate() 
+  {
+  const num1 = parseFloat(document.getElementById('num1').value);
+  const num2 = parseFloat(document.getElementById('num2').value);
+
+  if (!isNaN(num1) && !isNaN(num2)) 
+  {
+    const result = num1 + num2;
+    document.getElementById('result').innerText = `Result: ${result}`;
+  } else {
+    alert('Please enter valid numbers');
+  }
+}
+
+function print() {
+  const num1 = document.getElementById('num1').value;
+  const num2 = document.getElementById('num2').value;
+
+  if (num1 && num2) {
+    const result = parseFloat(num1) + parseFloat(num2);
+
+    const content = `
+      Number 1: ${num1}
+      Number 2: ${num2}
+      Result: ${result}
+    `;
+
+    const blob = new Blob([content], { type: 'text/plain' });
+    const fileName = 'result.txt';
+
+    if (window.navigator.msSaveOrOpenBlob) {
+      // For IE
+      window.navigator.msSaveBlob(blob, fileName);
+    } else {
+      // For other browsers
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  } else {
+    alert('Please enter valid numbers before printing');
+  }
+}
+
+  
+  </script>
+</body>
+</html>
+
+

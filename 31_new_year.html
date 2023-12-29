@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title> new year </title>
+
+        <style> 
+        
+            *{
+
+                margin: 0;
+                padding: 0;
+                
+            }
+            body{
+
+                background: #1e272e;
+                width: 100%;
+                height: 100%;
+            }
+
+            .outer{
+
+                position:absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                width: auto;
+                height: 300px;
+                background: inherit;
+
+            }
+
+            h1{
+
+                font-size: 6rem;
+                line-height: 100px;
+                color: white;
+            }
+
+            .old{
+
+                position: relative;
+                animation:animate1 3s linear;
+                opacity: 0;
+                
+            }
+
+            @keyframes animate1{
+
+                0%{bottom: 0; opacity: 1;}
+                100%{ bottom: 200px; opacity: 0;}
+            }
+
+            .new{
+
+                position: relative;
+                left:-150px;
+                animation: animate2 3s linear;
+            }
+
+            @keyframes animate2{
+
+                0%{ opacity: 0; left: 0;}
+                100%{ opacity: 1; left: -150px; }
+            }
+
+            h3{
+
+                font-size: 72px;
+                animation: animate3 6s linear ;
+                font-family: pacifico;
+                color: rgb(79, 104, 94);
+                text-shadow: 0px 3px rgb(6, 250, 169);
+                         
+            }
+
+            @keyframes animate3{
+
+                0%{ opacity: 0;}
+                50%{ opacity: 0;}
+                100%{ opacity: 1;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outer">
+            <h3> Happy new year </h3>
+            <h1>
+                 20
+                 <span class="old">22</span>
+                 <span class="new">23</span>
+            </h1>
+
+        </div>
+    </body>
