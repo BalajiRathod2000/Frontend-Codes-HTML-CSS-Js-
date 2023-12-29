@@ -1,0 +1,287 @@
+<html> 
+    <head> 
+        <title> Online JOb form </title>
+        
+        <style>
+
+            body{
+                     background-image: url("https://html.sammy-codes.com/images/background.jpg");
+                     background-size: cover;
+                     background-attachment: fixed;
+               }
+             
+         fieldset{
+
+            border: 5px outset black;
+            margin-top: 50px;
+            
+         }
+         legend{
+                   
+            background-color: rgb(45, 109, 109);
+            border: 5px inset red;
+            border-radius: 0px 15px;
+            padding: 10px;
+            color: white;
+            font-size: x-large;
+
+         }
+         ::backdrop{
+
+            color: blueviolet;
+         }
+
+         input:hover
+         {
+             background-color: deepskyblue;
+
+         }
+        
+         h2{
+
+            text-align: center;
+            height: 25px;
+            color: aquamarine;
+            background-color: rgb(38 48 48);
+            padding: 15px;
+            border-radius: 15px;
+            width: 184px;
+            margin-left: 450px;
+            position: sticky;
+            top: 3px;
+            border-radius: 1px 20px;
+         }
+        </style>
+    </head>
+    <body> 
+        <h2> Online JOb Form </h2>
+        <fieldset> 
+            <legend> Prersonal information</legend>
+            <form>
+                <table>
+                    <tr>
+                        <td > First Name:* </td>  
+                        <td> <input type="text" placeholder="First Name" required></td>
+
+                        <td> Middle Name:* </td>
+                        <td> <input type="text" placeholder="Middle Name"></td>
+
+                        <td> Last name:* </td>
+                        <td> <input type="text" placeholder="Last Name"required></td>
+                    </tr>
+                    <tr>
+                        <td> Father Name:* </td>
+                        <td> <input type="text" placeholder="Father Name" required></td>
+                        <td> Mother Name:* </td>
+                        <td> <input type="text" placeholder=" Mother Name"></td>
+                    </tr>
+                    <tr>
+                        <td> Phone.NO:*</td>
+                        <td> <input type="tel" placeholder="Phone Number" maxlength="10" required></td>
+    
+                        <td> Landline.NO: </td>
+                        <td> <input type="tel" placeholder="Alternate Number" maxlength="10"></td>
+                    </tr>
+                    <tr>
+                        <td> Email-Id: </td>
+                        <td> <input type="email" placeholder="Enetr Your Email" required></td>
+                    </tr>
+                    <tr> 
+                        <td> Password:</td>
+                        <td> <input type="password" placeholder="Password" pattern=".{6, }"></td>
+                    </tr>
+                    <tr>
+                        <td> Date of Birth</td>
+                        <td> <input type="date" required></td>
+
+                        <td> Place of Birth: </td>
+                        <td> <input type="text" placeholder="place of Birth" required></td>
+                    </tr>
+                    <tr>
+                        <td> Gender: </td>
+                        <td> <input type="radio" name="balaji" required>Male</td>
+                        <td> <input type="radio" name="balaji">Female</td>
+                    </tr>
+                    <tr>
+                        <td> Highest Qualification:* </td>
+                        <td> <select required>
+                            <option> --Select Your Qualification-- </option>
+                            <option> 10th </option>
+                            <option> 12th </option>
+                            <option> BA </option>
+                            <option> BSc </option>
+                            <option> BBA </option>
+                            <option> BCA </option>
+                            <option> MCA </option>
+                            <option> MBA </option>
+                            <option> MSc </option>
+                            <option> EEE </option>
+                            <option> MA </option>
+                        </select></td>
+                        <td> Years of Passing:* </td>
+                        <td> <input type="date" placeholder="Years of Passing" required></td>
+                    </tr>
+                    <tr>
+                        <td> Languages Known:</td>
+                        <td> <input type="checkbox" required>English
+                             <input type="checkbox" required> Hindi 
+                             <input type="checkbox" required>Kannada
+                              <input type="checkbox" required>Marathi</td>
+                    </tr>
+                    <tr> 
+                        <td> Hobbies:</td>
+                        <td> <input type="checkbox" required>Codibg
+                            <input type="checkbox" required> reading
+                            <input type="checkbox"required>Sports
+                            <input type="checkbox"required> othes</td>
+                    </tr>
+                    <tr>
+                        <td> Address: </td>
+                        <td> <textarea placeholder="Enter Your Address" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td> Nationality:*</td>
+                        <td> <select>
+                              <option> --Select Your Country-- </option>
+                              <option> USA </option>
+                              <option> India </option>
+                              <option> china </option>
+                              <option> S.Africa  </option>
+                              <option> N.Africa </option>
+                              <option> Korea </option>
+                              <option> Afghanistan </option>
+                              <option> Bangladesh </option>
+                              <option> Russia </option>
+                              <option> Others </option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td> Aadhar Card NO:*</td>
+                        <td> <input type="number" placeholder="Enter Aadhar Number" required></td>
+
+                        <td> Pan Card No:*</td>
+                        <td> <input type="number"  placeholder="Enter Your Pan Number"requi></td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+    
+
+
+
+
+
+     
+        <fieldset>
+            <legend> Education Details </legend>
+            <form>
+                <table>
+                    <tr>
+                        <th>S.NO </th>
+                        <th> Qualification * </th>
+                        <th> Institude/ University *</th>
+                        <th> Years of Passing *</th>
+                    </tr>
+                    <tr>
+                        <td> 01</td>
+                        <td> <input type="text" placeholder="Enter Qualification" required></td>
+                         <td> <input type="text" placeholder="Enter Institude/University Name" required></td>
+                         <td> <input type="date" required></td>
+                    </tr>
+                    <tr>
+                        <td> 02</td>
+                        <td> <input type="text" placeholder="Enter Qualification"></td>
+                         <td> <input type="text" placeholder="Enter Institude/University Name"></td>
+                         <td> <input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td> 03</td>
+                        <td> <input type="text" placeholder="Enter Qualification"></td>
+                         <td> <input type="text" placeholder="Enter Institude/University Name"></td>
+                         <td> <input type="date"></td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+    
+
+
+        <fieldset> 
+            <legend> Work Experience </legend>
+            <form>
+                <table>
+                    <tr>
+                        <th> S.NO </th>
+                        <th> Company * </th>
+                        <th> Work/Roles* </th>
+                        <th> From Date* </th>
+                        <th> To Date *</th>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td> <textarea placeholder="Company Name" required></textarea></td>
+                        <td> <textarea placeholder="Work/Roles" required></textarea></td>
+                        <td> <input type="date" required> </td>
+                        <td> <input type="date" required> </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td> <textarea placeholder="Company Name"></textarea></td>
+                        <td> <textarea placeholder="Work/Roles"></textarea></td>
+                        <td> <input type="date"> </td>
+                        <td> <input type="date"> </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td> <textarea placeholder="Company Name"></textarea></td>
+                        <td> <textarea placeholder="Work/Roles"></textarea></td>
+                        <td> <input type="date"> </td>
+                        <td> <input type="date"> </td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+    
+
+
+
+
+        <fieldset>
+            <legend> Others Details </legend>
+            <form>
+                <table>
+                    <tr>
+                        <td>  Job type: </td>
+                         <td> <input type="radio" name="balaji" required>Permanent
+                              <input type="radio" name="balaji" required > Contract 
+                              <input type="radio" name="balaji" required> Others</td>
+                    </tr>
+                    <tr>
+                        <td> Date of Joining *</td>
+                        <td> <input type="date" required></td>
+                        <td> Timing of Joining</td>
+                        <td> <input type="time" required></td>
+                    </tr>
+                    <tr>
+                        <td> Frefer Job Location</td>
+                        <td> <input type="radio" name="balaji">Bangalore
+                             <input type="radio" name="balaji"> Mysore
+                             <input type="radio" name="balaji"> Gulbarga
+                             <input type="radio" name="balaji">Others</td>
+                    </tr>
+                    <tr>
+                        <td> Willing to Relocate To Mysore ?</td>
+                        <td> <input type="radio" name="balaji"> Yes 
+                             <input type="radio" name="balaji"> No</td>
+                    </tr>
+                    <tr>
+                        <td> <input type="radio" name="balaji" required> </td>
+                        <td> I am  here Declaring that all the above  mentioned information is true as per my knowledge *</td>
+                    </tr>
+                    <td> <button> Submit </button></td>
+                    <td> <button> Reset </button></td>
+                </table>
+            </form>
+        </fieldset>
+    </body>
+</html>
