@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Charging</title>
+
+    <style>
+
+        .battery
+        {
+
+            width: 150px;
+            height: 250px;
+            border: 3px solid grey;
+            display: flex;
+            margin: 100px 500px;
+            justify-self: center;
+            border-radius: 15px ;
+            transform: rotate(180deg);
+            
+            
+            /* border-top-right-radius: 2%;
+            border-top-left-radius: 2%;
+            border-bottom-left-radius: 2%;
+            border-bottom-right-radius: 2%; */
+        }
+
+        .battery::after
+        {
+
+            content: " ";
+            width: 25px;
+            height: 9px;
+            border: 3px solid grey;
+            justify-content: center;
+            margin: 254px -90px;
+            position: relative;
+            border-radius: 5px ;
+        }
+        
+        
+        .icon
+        {
+            background-color: aqua;
+            width: 150px;
+            height: 250px;
+            border-radius: 10px ;
+            animation: charge 7s linear 0s infinite reverse;
+            
+       }
+
+       @keyframes charge
+       {
+             100%
+             {
+                background-color: red;
+                height: 0%;
+             }
+             
+             80%
+             {
+                background-color: rgb(243, 143, 12);
+                height: 20%
+             }
+
+             60%
+             {
+                background-color: rgb(221, 245, 9);
+                height: 40%
+             }
+
+             40%
+             {
+                background-color: greenyellow;
+                height: 60%
+             }
+
+             
+             20%
+             {
+                background-color: rgb(121, 220, 60);
+                height:80%
+             }
+             0%
+             {
+                background-color: green;
+                height: 100%;
+             }
+       }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="battery">
+        <div class="icon"></div>    
+    </div>
+
+</body>
+</html>
