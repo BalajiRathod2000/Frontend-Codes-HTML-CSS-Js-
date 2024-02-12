@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #F1FAEE;
+}
+
+.container {
+  text-align: center;
+  border: 2px solid black ;
+  height: auto ;
+  width: 450px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  color: #090909;
+  background-color: #A8DADC;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 10px black;
+  color: white;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #037bfb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  border: 2px solid rgb(247, 7, 199);
+}
+
+button:hover {
+  background-color: #258752;
+}
+
+#weatherInfo {
+  margin-top: 20px;
+}
+
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="cityInput" placeholder="Enter City Name">
+        <button id="submitBtn">Get Weather</button>
+        <div id="weatherInfo"></div>
+    </div>
+
+  <script>
+    const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      const city = document.getElementById('cityInput').value;
+      if (city) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+          .then(response => response.json())
+          .then(data => {
+            const weatherInfo = document.getElementById('weatherInfo');
+            weatherInfo.innerHTML = `
+              <h2>${data.name}, ${data.sys.country}</h2>
+              <p>Temperature: ${data.main.temp}°C</p>
+              <p>Description: ${data.weather[0].description}</p>
+            `;
+          })
+          .catch(error => {
+            console.log('Error fetching weather data:', error);
+            const weatherInfo = document.getElementById('weatherInfo');
+            weatherInfo.innerHTML = '<p>Failed to fetch weather data. Please try again later.</p>';
+          });
+      } else {
+        alert('Please enter a city name.');
+      }
+    });
+  </script>
+</body>
+</html>
