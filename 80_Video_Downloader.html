@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+
+        .container {
+
+            color:  white;
+            text-align: center;
+            border-radius: 10px;
+            border: 2px solid black;
+            width: 500px;
+            box-shadow: 0px 0px 10px black;
+            /* background-color: rgb(61, 79, 81); */
+            background-color: #1a5f70;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        button {
+
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Video Downloader</h1>
+        <input type="text" id="videoUrl" placeholder="Paste video URL...">
+        <button onclick="downloadVideo()">Download</button>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script>
+
+        function downloadVideo() {
+            var videoUrl = document.getElementById('videoUrl').value.trim();
+            var errorMessage = document.getElementById('errorMessage');
+
+            // Simple URL validation
+            if (videoUrl === '') {
+                errorMessage.textContent = 'Please paste a valid video URL';
+                return;
+            }
+
+            // Simulate video download
+            simulateDownload(videoUrl);
+        }
+
+        function simulateDownload(videoUrl) {
+            // Simulate downloading delay
+            setTimeout(function () {
+                // Simulate success
+                alert('Video downloaded successfully!');
+            }, 2000);
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+    <input type="text" id="videoUrl" placeholder="Enter video URL">
+    <button onclick="downloadVideo()">Download</button>
+
+    <script>
+        function downloadVideo() {
+            var videoUrl = document.getElementById("videoUrl").value;
+
+            // Check if the URL is valid
+            if (videoUrl.trim() === "") {
+                alert("Please enter a video URL");
+                return;
+            }
+
+            // Create an anchor element to trigger the download
+            var a = document.createElement('a');
+            a.href = videoUrl;
+            a.download = 'video.mp4';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html> -->
