@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test page</title>
+
+    <!--  -------------------- Boostrap link -------------------------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- -------------------- Boostrap Link JavaScript Bundle -------------------- -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+    <style>
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-10px) rotate(-5deg);
+            }
+
+            40% {
+                transform: translateX(10px) rotate(5deg);
+            }
+
+            60% {
+                transform: translateX(-10px) rotate(-5deg);
+            }
+
+            80% {
+                transform: translateX(10px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply the shake animation when hovering over the h1 element */
+        h1:hover {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .text2 {
+
+            margin-top: -500px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: xx-large;
+            color: white;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+
+
+        }
+
+        .text3 {
+            margin-top: -10px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: medium;
+            color: white;
+        }
+
+        #btn1 {
+
+            margin-top: -10px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: larger;
+            color: black;
+            margin-left: 550px;
+            background-color: white;
+
+        }
+
+        #about {
+
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card1 {
+            perspective: 1000px;
+            border-radius: 10px;
+        }
+
+        .card2 {
+            width: 400px;
+            height: 200px;
+            transform-style: preserve-3d;
+            /* transition: transform 0.5s; */
+            transition: transform 1s;
+            box-shadow: 0px 0px 10px black;
+            border-radius: 10px;
+        }
+
+        .card2:hover {
+            transform: rotateY(180deg);
+            border-radius: 10px;
+        }
+
+        .card2 .front,
+        .card2 .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .card2 .front {
+            background-color: #4bb9ac;
+            border-radius: 10px;
+
+        }
+
+        .card2 .back {
+            background-color: #81c784;
+            transform: rotateY(180deg);
+            border-radius: 10px;
+        }
+
+        .container1 {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: #282424;
+        }
+
+        .image1 {
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s ease;
+        }
+
+        .text1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .container1:hover .image1 {
+            opacity: 0;
+        }
+
+        .container1:hover .text1 {
+            opacity: 1;
+        }
+
+        .card3 {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        /* Card image */
+        .card-image3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Card content */
+        .card-content3 {
+            padding: 20px;
+        }
+
+        /* Card title */
+        .card-title3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Hidden details */
+        .card-details3 {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: left 0.3s ease-in-out;
+        }
+
+        /* Show details on hover */
+        .card3:hover .card-details3 {
+            left: 0;
+
+        }
+
+        /* Slide image on hover */
+        .card3:hover .card-image3 img {
+            transform: translateX(-10%);
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Balaji Rathod</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#About">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Case">Case Studies</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#products">PRODUCTS</a></li>
+                            <li><a class="dropdown-item" href="#Lead">Lead Generation</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#contact">Contact Us</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <video id="video1"
+                    src="https://cdn.pixabay.com/vimeo/726547787/market-122881.mp4?width=640&hash=67ee29f484a00202b21ec1331707542331c3d9ac"
+                    autoplay muted loop class="d-block w-100" style="height: 60%;" alt="earth"></video>
+            </div>
+        </div>
+    </div>
+    <div class="text">
+        <h2 class="text2 fs-1">MAXIMIZE YOUR <br> BUSINESS POTENTIAL</h2>
+        <p class="text3">Unleash your Business Spirit with our expert Lead Generation services.</p>
+        <button type="button" class="btn btn-warning" id="btn1">Get Started</button>
+    </div>
+
+    <!-- ------------------------ About Us --------------------------------- -->
+
+    <div class="card mb-3 fluid"
+        style="max-width: 100%; margin-top: 350px; background-color: rgb(55, 54, 54); color: white;" id="About">
+        <h1 style="color: white; text-align: center;">About Us</h1>
+        <div class="row g-0" style="width: 100%;">
+            <div class="col-md-4">
+                <img src="https://img1.wsimg.com/isteam/stock/oAZBAqk/:/rs=w:1200,h:600,cg:true,m/cr=w:1200,h:600"
+                    class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title fs-3" style="text-align: center; color: white;">Our Mission</h5>
+                    <p class="card-text" style="text-align: center; width: 400px; margin-left: 200px;">At EvoXcel, our
+                        mission is to help businesses grow by providing top-notch Leads. We work with companies of all
+                        sizes to help them achieve their goals and reach their full potential.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------------------------------------------------- -->
+
+        <div class="row g-0" style="width: 100%;">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title fs-3" style="text-align: center;">Our Team</h5>
+                    <p class="card-text" style="text-align: center; width: 400px; margin-left: 200px;">Our team of
+                        experienced Lead Generation professionals is dedicated to providing the best possible service to
+                        our
+                        clients. We have a wide range of skills and expertise, and we work together to provide
+                        comprehensive
+                        solutions to our clients' business needs.</p>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="https://img1.wsimg.com/isteam/ip/d0a85d60-1e60-424a-bcc8-6ae0998227ba/L1G.webp/:/cr=t:0%25,l:18.09%25,w:63.83%25,h:100%25/rs=w:940,h:470,cg:true"
+                    class="img-fluid rounded-start" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <div class="row g-0" style="width: 100%; background-color: rgb(55, 54, 54); margin-top: -18px;">
+        <div class="col-md-4">
+            <img src="https://img1.wsimg.com/isteam/stock/ka7BJWO/:/rs=w:1200,h:600,cg:true,m/cr=w:1200,h:600"
+                class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title fs-3" style="text-align: center; color: white;">Our Approach</h5>
+                <p class="card-text" style="text-align: center; width: 400px; margin-left: 200px; color: white;">At
+                    EvoXcel, our
+                    mission is to help businesses grow by providing top-notch Leads. We work with companies of all
+                    sizes to help them achieve their goals and reach their full potential.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------- Case Studies -------------------------------------------- -->
+
+    <h1 style="text-align: center; margin-left:-50px; margin-top: 50px; color: orange;" id="Case"> CASE STUDIES</h2>
+        <div class="case-Stud d-flex w-100">
+            <div class="card1 w-100" style="margin-top: 50px; margin-left: 10px;">
+                <div class="card2">
+                    <div class="front">
+                        <img src="https://cdn.pixabay.com/photo/2016/12/13/22/15/chart-1905225_1280.jpg" width="400px"
+                            style="border-radius: 15px;" alt="">
+
+                    </div>
+                    <div class="back">
+                        <p style="width: 450px;"><b>DASHBOARD HIGHLIGHTS:</b> <br>
+                            This analysis drives towards understanding the details of the customer experience and is
+                            modeled
+                            on a Net Promoter Score which predicts business growth.
+                            Orders and contractor detailed charts shows the number of contractors each Warehouse uses,
+                            and
+                            the number of orders assigned to each contractor. Warehouses 6, 13, 2 and 9 each have
+                            significantly</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card1 w-100" style="margin-top: 50px; margin-left: -20px; ">
+                <div class="card2">
+                    <div class="front">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/19/21/01/analysis-1841158_1280.jpg"
+                            width="400px" style="border-radius: 20px; height: 230px;" alt="">
+                    </div>
+                    <div class="back">
+                        <p style="width: 450px;"><b>DASHBOARD HIGHLIGHTS:</b> <br>
+                            This analysis gives a multidimensional insight on the listings around NYC
+                            Heat Map of Listings shows the distribution of various room types across NYC’s 5 borough
+                            Properties (doughnut chart) gives the percentage of properties available by type</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card1 w-100" style="margin-top: 50px; margin-left: -23px; ">
+                <div class="card2">
+                    <div class="front">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/23/14/37/blur-1853262_1280.jpg" width="400px"
+                            style="border-radius: 20px; height: 230px;" alt="">
+                    </div>
+                    <div class="back">
+                        <p style="width: 450px;"><b>DASHBOARD HIGHLIGHTS:</b> <br>
+                            This analysis gives information on the Admissions, Applications and the Ethnic groups who
+                            are
+                            applying to schools to the biggest schooling board in the United States of America –
+                            University
+                            of California Application vs Admissions by campus gives a trend on Applications and
+                            Admission
+                            trends over the
+                            years</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- --------------------------- 2nd case studies ------------------------------------------- -->
+
+        <div class="case-Stud d-flex w-100">
+            <div class="card1 w-100" style="margin-top: 50px; margin-left: 10px;">
+                <div class="card2">
+                    <div class="front">
+                        <img src="https://cdn.pixabay.com/photo/2023/10/18/15/43/compass-8324516_1280.jpg" width="400px"
+                            style="border-radius: 15px; height: 230px;" alt="">
+
+                    </div>
+                    <div class="back">
+                        <p style="width: 450px;"><b>DASHBOARD HIGHLIGHTS:</b> <br>
+                            This analysis drives towards understanding the details of the customer experience and is
+                            modeled
+                            on a Net Promoter Score which predicts business growth.
+                            Orders and contractor detailed charts shows the number of contractors each Warehouse uses,
+                            and
+                            the number of orders assigned to each contractor. Warehouses 6, 13, 2 and 9 each have
+                            significantly</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card1 w-100" style="margin-top: 50px; margin-left: -20px; ">
+                <div class="card2">
+                    <div class="front">
+                        <img src="https://cdn.pixabay.com/photo/2015/12/04/14/05/code-1076536_1280.jpg" width="400px"
+                            style="border-radius: 20px; height: 230px;" alt="">
+                    </div>
+                    <div class="back">
+                        <p style="width: 450px;"><b>DASHBOARD HIGHLIGHTS:</b> <br>
+                            This analysis gives a multidimensional insight on the listings around NYC
+                            Heat Map of Listings shows the distribution of various room types across NYC’s 5 borough
+                            Properties (doughnut chart) gives the percentage of properties available by type</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card1 w-100" style="margin-top: 50px; margin-left: -23px; ">
+                <div class="card2">
+                    <div class="front">
+                        <img src="https://cdn.pixabay.com/photo/2015/02/05/08/12/stock-624712_1280.jpg" width="400px"
+                            style="border-radius: 20px; height: 230px;" alt="">
+                    </div>
+                    <div class="back">
+                        <p style="width: 450px;"><b>DASHBOARD HIGHLIGHTS:</b> <br>
+                            This analysis gives information on the Admissions, Applications and the Ethnic groups who
+                            are
+                            applying to schools to the biggest schooling board in the United States of America –
+                            University
+                            of California Application vs Admissions by campus gives a trend on Applications and
+                            Admission
+                            trends over the
+                            years</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- -------------------------------- Product page ---------------------------- -->
+
+        <div id="products">
+
+            <h1 style="text-align: center; margin-left: -50px; margin-top: 50px; color: rgb(0, 191, 255);"> PRODUCTS
+            </h1>
+            <h5 style="text-align: center;">THE RIGHT INFORMATION TO THE RIGHT PEOPLE AT THE RIGHT TIME</h5>
+            <p style="text-align: center; width: 900px; margin-left: 150px; ">Building a culture of continuous
+                improvement
+                and leading a data-driven organization requires information and
+                insight that leads to actionable business intelligence. Semaphore Analytica offers a suite of products
+                that
+                ensures leaders have the flexibility to choose the right solution for their operations.</p>
+        </div>
+
+
+        <div id="img-text" style="width: 100%; display: flex; margin-top: 50px; justify-content: center;">
+            <div class="container1" style="margin-left: 20px;">
+                <img class="image1" src="https://semaphoreai.com/wp-content/uploads/2021/02/data-saas-250x250-1.png"
+                    alt="Your Image">
+                <div class="text1">
+                    <h3 style="color: rgb(231, 63, 2);">SUBSCRIPTION</h3>
+                    <p style="color: white;">Ensure your shareholders, executive leadership and other mission critical
+                        presentations provide
+                        detailed analysis.</p>
+                </div>
+            </div>
+
+
+            <div class="container1" style="margin-left: 20px;">
+                <img class="image1" src="https://semaphoreai.com/wp-content/uploads/2021/02/13-150x150.png"
+                    alt="Your Image">
+                <div class="text1">
+                    <h3 style="color: rgb(231, 63, 2);">DUE DILIGENCE</h3>
+                    <p style="color: white;">Supercharge your organization’s business intelligence with daily workbooks,
+                        customized dashboards and
+                        weekly analysis.</p>
+                </div>
+            </div>
+
+            <div class="container1" style="margin-left: 20px;">
+                <img class="image1" src="https://semaphoreai.com/wp-content/uploads/2021/03/Exit-Icon.png"
+                    alt="Your Image">
+                <div class="text1">
+                    <h3 style="color: rgb(231, 63, 2);">EXIT STRATEGY</h3>
+                    <p style="color: white;">Optimize your profitability when considering an exit strategy with a clear
+                        value proposition document.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------- 2nd page------------------------------------------ -->
+
+        <div id="img-text" style="width: 100%; display: flex; margin-top: 50px; justify-content: center;">
+            <div class="container1" style="margin-left: 20px;">
+                <img class="image1" src="https://semaphoreai.com/wp-content/uploads/2021/02/15.png" alt="Your Image">
+                <div class="text1">
+                    <h3 style="color: rgb(231, 63, 2);">CLIENT REPRESENTATIONS</h3>
+                    <p style="color: white;">Ensure your shareholders, executive leadership and other mission critical
+                        presentations provide detailed analysis.</p>
+                </div>
+            </div>
+
+
+            <div class="container1" style="margin-left: 20px;">
+                <img class="image1" src="https://semaphoreai.com/wp-content/uploads/2021/02/16.png" alt="Your Image">
+                <div class="text1">
+                    <h3 style="color: rgb(231, 63, 2);">STANDARDIZED DASHBOARD</h3>
+                    <p style="color: white;">When organizations have an urgent need for a quick visualization and
+                        understanding of their business.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- -----------------------------Lead Generation ----------------------------------------- -->
+
+        <h1 id="Lead" style="text-align: center; margin-left: -50px; margin-top: 50px; color: rgb(8, 146, 121);"> LEAD
+            GENERATION </h1>
+        <div style="width: 100%; display: flex; justify-content: center; background-color: #c7f1c9;">
+            <div class="card3" style="margin: 60px 50px; box-shadow: 0px 0px 10px black;">
+                <!-- Card image -->
+                <div class="card-image3">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/03/20/02/laptop-3196481_1280.jpg" alt="Image">
+                </div>
+                <!-- Card content -->
+                <div class="card-content3">
+                    <!-- Title -->
+                    <h2 class="card-title3">Lead Aquisition</h2>
+                    <!-- Description -->
+                    <p>A prospect will find you from marketing channels and visit your website. The prospect will then
+                        be directed to a landing page or other asset where they are asked to sign up.</p>
+                </div>
+                <!-- Card details (hidden by default) -->
+                <div class="card-details3">
+                    <p>There are various ways of achieving this, perhaps the most common being PPC advertising and SEO.
+                        The prospect will typically spot an ad for something they are interested in and click on it. The
+                        prospect will then be directed to a landing page or other asset where they are asked to sign up
+                        for more information on the product, news on promotions and other deals, and similar. Different
+                        methods are used to help encourage the prospect to share their personal details.</p>
+                </div>
+            </div>
+
+            <!-- ------------------------- 2nd slide --------------------------------------------- -->
+
+            <div class="card3" style="margin: 60px 50px; box-shadow: 0px 0px 10px black;">
+                <!-- Card image -->
+                <div class="card-image3">
+                    <img src="https://cdn.pixabay.com/photo/2020/11/24/09/56/team-5772023_1280.jpg" alt="Image">
+                </div>
+                <!-- Card content -->
+                <div class="card-content3">
+                    <!-- Title -->
+                    <h2 class="card-title3">Lead Nurturing</h2>
+                    <!-- Description -->
+                    <p>When a lead is first acquired, they will likely have some interest but still be some distance
+                        from being ready to buy. This means that marketing will need to nurture them; educate them and
+                        answer any questions they might have</p>
+                </div>
+                <!-- Card details (hidden by default) -->
+                <div class="card-details3">
+                    <p>When a lead is first acquired, they will likely have some interest but still be some distance
+                        from being ready to buy. This means that marketing will need to nurture them; educate them and
+                        answer any questions they might have. This can be done in a variety of ways, one of the most
+                        common of which is with drip campaigns that involve sending relevant information to the prospect
+                        according to their behaviors and other factors.</p>
+                </div>
+            </div>
+
+            <!-- ------------------------- 3rd slide --------------------------------------------- -->
+
+            <div class="card3" style="margin: 60px 50px; box-shadow: 0px 0px 10px black;">
+                <!-- Card image -->
+                <div class="card-image3">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/09/08/32/digital-marketing-1725340_1280.jpg"
+                        alt="Image">
+                </div>
+                <!-- Card content -->
+                <div class="card-content3">
+                    <!-- Title -->
+                    <h2 class="card-title3 text-align:center">Marketing Lead</h2>
+                    <!-- Description -->
+                    <p>In addition to nurturing a lead, marketing also has the task of qualifying the lead. This means
+                        ensuring the prospect is genuinely interested and almost ready to buy the product.</p>
+                </div>
+                <!-- Card details (hidden by default) -->
+                <div class="card-details3">
+                    <p>The importance of speaking with the decision-maker cannot be understated. If the contact is not
+                        the decision-maker then they will need to report back to the person who does make decisions.
+                        However, that person has not been through the same nurturing process that the contact has. This
+                        makes it a lot less likely a sale will be made and trying to make a sale to the wrong contact
+                        can end up with the prospect being lost altogether.
+                    <p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ------------------------- 4th slide --------------------------------------------- -->
+
+        <div style="width: 100%; margin-top: -20px; display: flex; justify-content: center; background-color: #c7f1c9;">
+            <div class="card3" style="margin: -5px 30px; box-shadow: 0px 0px 10px black;">
+                <!-- Card image -->
+                <div class="card-image3">
+                    <img src="https://roofandfloor.thehindu.com/raf/real-estate-blog/wp-content/uploads/sites/14/2020/09/Featured-image-for-2.png"
+                        alt="Image">
+                </div>
+                <!-- Card content -->
+                <div class="card-content3">
+                    <!-- Title -->
+                    <h2 class="card-title3">Sales Transfer</h2>
+                    <!-- Description -->
+                    <p>Once a lead has been qualified by Marketing, it would be passed on to Sales. This means that
+                        Sales does not need to talk to every lead. They only need to talk to leads who are marketing
+                        qualified and ready for sales to take over..</p>
+                </div>
+                <!-- Card details (hidden by default) -->
+                <div class="card-details3">
+                    <p>Although marketing is expected to qualify a lead, sales will also often perform their own
+                        qualification check. This might involve somebody from sales giving the prospect a call to ask
+                        them more questions and evaluate their readiness to make a purchase. The process also helps to
+                        prep the prospect further for a sale to help ensure they are ready when an offer is made.
+                        If the lead is not fully qualified yet then it does not necessarily mean the prospect is lost.
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- ------------------------- 5th slide --------------------------------------------- -->
+
+            <div class="card3" style="margin: -5px 50px; box-shadow: 0px 0px 10px black;">
+                <!-- Card image -->
+                <div class="card-image3">
+                    <img src="https://cdn.pixabay.com/photo/2018/05/08/08/42/virtual-coworkers-3382503_1280.jpg"
+                        alt="Image">
+                </div>
+                <!-- Card content -->
+                <div class="card-content3">
+                    <!-- Title -->
+                    <h2 class="card-title3">Customer Retention</h2>
+                    <!-- Description -->
+                    <p>Once a customer has been acquired, you will then need to work on keeping them. There are various
+                        strategies that you can employ to help ensure their customers stay loyal to them.</p>
+                </div>
+                <!-- Card details (hidden by default) -->
+                <div class="card-details3">
+                    <p>Things will occasionally go wrong – it’s a part of life. What really matters is how a company
+                        deals with problems when they do occur and how they put things right for their customers. A good
+                        customer service department will help to overcome any issues that do occur, helping to keep the
+                        customer happy. In a sense, having problems arise can even work in the company’s favor as it’s
+                        an opportunity for the company to show they do have their customer’s best interests at heart.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- -------------------------- Contact Page -------------------------------------------- -->
+
+        <div id="contact" style="width: 100%;">
+
+            <h1 id="Lead" style="text-align: center; margin-left: -50px; margin-top: 50px; color: rgb(8, 146, 121);">
+                Contact Us </h1>
+
+            <div class="visme_d" data-title="Untitled Project" data-url="q6p3qode-untitled-project?fullPage=true"
+                data-domain="forms" data-full-page="false" data-min-height="100vh" data-form-id="41558"></div>
+            <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+
+        </div>
+
+</body>
+
+</html>
+
+
+
+
+<!-- https://cdn.pixabay.com/photo/2018/04/26/09/40/statistics-3351516_1280.jpg -->
